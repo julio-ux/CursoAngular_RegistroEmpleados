@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Empleados } from './empleado.model';
+import { ServicioEmpleadosService } from './servicio-empleados.service';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,9 @@ import { Empleados } from './empleado.model';
 })
 export class AppComponent {
   titulo = 'Listado de Empleados';
+  constructor(private miServicio: ServicioEmpleadosService){
+
+  }
   empleados: Empleados[] = [
       new Empleados("Ana","Lopez","Presidente",6000),
       new Empleados("Daniel","Sanchez","Vicepresidente",5500),
@@ -16,6 +20,7 @@ export class AppComponent {
   ];
   agregarEmpleado(){
     let miEmpleado = new Empleados(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
+    this.miServicio.muestraMensaje("Empleado Registrado: " + this.cuadroNombre + " " + this.cuadroApellido);
     this.empleados.push(miEmpleado);
   }
   cuadroNombre:string = "";
