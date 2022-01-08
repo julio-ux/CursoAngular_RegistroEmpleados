@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
   empleados: Empleados[] = [];
   agregarEmpleado(){
     let miEmpleado = new Empleados(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-    this.miServicio.muestraMensaje("Empleado Registrado: " + this.cuadroNombre + " " + this.cuadroApellido);
+    //this.miServicio.muestraMensaje("Empleado Registrado: " + this.cuadroNombre + " " + this.cuadroApellido);
     this.empleadosService.agregarEmpleadoServicio(miEmpleado);
   }
   cuadroNombre:string = "";
