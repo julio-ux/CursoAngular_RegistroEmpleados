@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Empleados } from '../empleado.model';
 
 @Component({
@@ -17,9 +18,12 @@ export class EmpleadoHijoCComponent implements OnInit {
     this.arrayCaracteristicas.push(nuevaCaracteristica);
   }
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+  actualizarEmpleado(): void{
+    this.router.navigate(["actualizarempleado"]);
   }
 
 }

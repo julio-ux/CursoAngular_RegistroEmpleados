@@ -2,7 +2,11 @@
     <div class="row">
         <div class="col">
             <div>
-                {{ indice + 1 }} : {{ empleadoDeLista.nombre }} {{ empleadoDeLista.apellido }} {{ empleadoDeLista.cargo }} $ {{ empleadoDeLista.salario }}
+                <a [routerLink]="['/actualizarempleado',indice]">{{ indice + 1 }} : {{ empleadoDeLista.nombre }} {{ empleadoDeLista.apellido }} {{ empleadoDeLista.cargo }} $ {{ empleadoDeLista.salario }}</a>>
+                
+                <!-- <div style="text-align: left;">
+                    <button class="btn btn-dark" (click)="actualizarEmpleado()">Actualizar Empleado</button>
+                </div> -->
             </div>
             <ul style="list-style: none;">
                 <li *ngFor="let caracteristica of arrayCaracteristicas">{{caracteristica}}</li>
