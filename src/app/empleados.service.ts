@@ -17,4 +17,11 @@ export class EmpleadosService{
         this.ServicioVentana.muestraMensaje("Persona que se va a agregar: \n" + empleado.nombre + "\nSalario: " + empleado.salario);
         this.empleados.push(empleado);
     }
+    encontrarEmpleado(id:number){
+        let empleadoFound:Empleados = this.empleados[id];
+        return empleadoFound;
+    }
+    actualizarEmpleado(id:number,empleado:Empleados){
+        this.empleados[id] = empleado;
+    }
 }
