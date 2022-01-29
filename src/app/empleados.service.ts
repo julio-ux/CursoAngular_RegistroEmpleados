@@ -24,4 +24,7 @@ export class EmpleadosService{
     actualizarEmpleado(id:number,empleado:Empleados){
         this.empleados[id] = empleado;
     }
+    eliminarEmpleado(id:number){
+        this.empleados.splice( id, 1 );
+    }
 }

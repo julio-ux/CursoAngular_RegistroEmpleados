@@ -27,6 +27,11 @@ export class ActualizaComponentComponent implements OnInit {
     this.empleadoService.actualizarEmpleado(this.indice,miEmpleado);
     this.router.navigate([""]);
   }
+  eliminarEmpleado(): void{
+    this.indice = this.route.snapshot.params["id"];
+    this.empleadoService.eliminarEmpleado(this.indice);
+    this.router.navigate([""]);
+  }
   volverHome(): void{
     this.router.navigate([""]);
   }
