@@ -2,8 +2,14 @@
     <div class="row">
         <div class="col">
             <div>
-                <a [routerLink]="['/actualizarempleado',indice]">{{ indice + 1 }} : {{ empleadoDeLista.nombre }} {{ empleadoDeLista.apellido }} {{ empleadoDeLista.cargo }} $ {{ empleadoDeLista.salario }}</a>>
-                
+                {{ indice + 1 }} : {{ empleadoDeLista.nombre }} {{ empleadoDeLista.apellido }} {{ empleadoDeLista.cargo }} $ {{ empleadoDeLista.salario }}
+                <a [routerLink]="['/actualizarempleado',indice]" [queryParams]="{accion:'1'}">
+                    Actualiza
+                </a>
+                &nbsp;&nbsp;
+                <a [routerLink]="['/actualizarempleado',indice]" [queryParams]="{accion:'2'}">
+                    Elimina
+                </a>
                 <!-- <div style="text-align: left;">
                     <button class="btn btn-dark" (click)="actualizarEmpleado()">Actualizar Empleado</button>
                 </div> -->
